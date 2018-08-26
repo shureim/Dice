@@ -1,17 +1,17 @@
 .jumbotron{
-  background-color: #E53935;
+  background-color: #26c6da;
   color:#424242;
 }
 
 #btn{
-  background-color: #E53935;
+  background-color: #26c6da;
   color:#424242;
   padding: 15px 25px;
   border:none;
   font-weight: bold;
 }
 .well{
-  background-color:#EF9A9A;
+  background-color:#26c6da;
 }
 #person1roll{
   border:none;
@@ -49,8 +49,10 @@ b{
   font-weight: bold;
 }
 body{
-  background-image: url(../img/big.jpeg);
+  background-image: url(../img/black.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  opacity: 0.7;
+  filter: alpha(opacity=60);
 }
