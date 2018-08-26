@@ -1,13 +1,13 @@
-// business logic//
-// var player1 ="";
-// var player2 ="";
-//
-// var dice ={
-//   side : 6,
-//   roll:function(){
-//     var throwDice = Math.floor(Math.random() * this.side)+ 1;
-//   }
-// }
+business logic//
+var player1 ="";
+var player2 ="";
+
+var dice ={
+  side : 6,
+  roll:function(){
+    var throwDice = Math.floor(Math.random() * this.side)+ 1;
+  }
+}
 // $(document).ready(function(){
 //   var diceroll1 =0;
 //   var score1 =0;
