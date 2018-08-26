@@ -70,55 +70,55 @@ $(document).ready(function(){
 
 
       });
-//       var diceroll2 =0;
-//       var score2 =0;
-//       var total2 =0;
-//
-//         $("#person1hold").attr("disabled",true);
-//         $("#person1roll").attr("disabled",true);
-//         $("#person2roll").click(function(){
-//           diceroll2 = dice.roll();
-//           if(diceroll2===1){
-//             diceroll2 = 0;
-//             score2 = 0;
-//             $("#person2hold").attr("disabled",true);
-//             $("#person2roll").attr("disabled",true);
-//
-//             $("#person1hold").attr("disabled",false);
-//             $("#person1roll").attr("disabled",false);
-//             alert("Sorry you rolled 1! your turn is over")
-//             }
-//
-//             $("#diceroll2").text(diceroll2);
-//
-//                  score2 += diceroll2;
-//                  $("#score2").text(score2);
-//
-//            });
-//            $("#person2hold").click(function(){
-//                  total2 += score2;
-//
-//                  $("#total2").text(total2);
-//                  if(total2>=100){
-//                    alert("The winner is player2")
-//                  }else{
-//                    diceroll1 = 0;
-//                    score2 = 0;
-//                    $("#diceroll2").text(diceroll2);
-//                    $("#score2").text(score2);
-//
-//                    $("#person2roll").attr("disabled",true);
-//                    $("#person2hold").attr("disabled",true);
-//
-//                    $("#person1roll").attr("disabled",false);
-//                    $("#person1hold").attr("disabled",false);
-//
-//                    alert("now is player1 turn");
-//                  }
-//                });
-//              });
-//
-//     });
+      var diceroll2 =0;
+      var score2 =0;
+      var total2 =0;
+
+        $("#person1hold").attr("disabled",true);
+        $("#person1roll").attr("disabled",true);
+        $("#person2roll").click(function(){
+          diceroll2 = dice.roll();
+          if(diceroll2===1){
+            diceroll2 = 0;
+            score2 = 0;
+            $("#person2hold").attr("disabled",true);
+            $("#person2roll").attr("disabled",true);
+
+            $("#person1hold").attr("disabled",false);
+            $("#person1roll").attr("disabled",false);
+            alert("Sorry you rolled 1! your turn is over")
+            }
+
+            $("#diceroll2").text(diceroll2);
+
+                 score2 += diceroll2;
+                 $("#score2").text(score2);
+
+           });
+           $("#person2hold").click(function(){
+                 total2 += score2;
+
+                 $("#total2").text(total2);
+                 if(total2>=100){
+                   alert("The winner is player2")
+                 }else{
+                   diceroll1 = 0;
+                   score2 = 0;
+                   $("#diceroll2").text(diceroll2);
+                   $("#score2").text(score2);
+
+                   $("#person2roll").attr("disabled",true);
+                   $("#person2hold").attr("disabled",true);
+
+                   $("#person1roll").attr("disabled",false);
+                   $("#person1hold").attr("disabled",false);
+
+                   alert("now is player1 turn");
+                 }
+               });
+             });
+
+    });
 
 //
 // var dice-1 =0;
