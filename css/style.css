@@ -1,4 +1,4 @@
-/* .jumbotron{
+.jumbotron{
   background-color: #E53935;
   color:#424242;
 }
@@ -12,7 +12,7 @@
 }
 .well{
   background-color:#EF9A9A;
-}
+/* }
 #person1roll{
   border:none;
   padding:15px 25px;
