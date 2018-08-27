@@ -56,3 +56,6 @@ body{
   opacity: 0.7;
   filter: alpha(opacity=60);
 }
+.col-md-2{
+  text-align: center;
+}
