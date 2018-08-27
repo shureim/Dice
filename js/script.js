@@ -12,25 +12,9 @@ var dice ={
   }
 }
 
-function Player(turn) {
-  this.diceRoll = 0;
-  this.score = 0;
-  this.total = 0;
-  this.personName;
+function page(){
+  location.reload()
 }
-
-Player.prototype.newGame = function () {
-
-  this.diceRoll = 0;
-  this.score = 0;
-  this.total = 0;
-  this.personName ="";
-}
-var clearValues = function(){
-  $(".person1Name").val("");
-  $(".person2Name").val("");
-}
-
 
 
 $(document).ready(function(){
@@ -50,21 +34,6 @@ $(document).ready(function(){
 
     player1.personName=person1Name;
     player2.personName=person2Name;
-
-  $("button#restart").click(function(event){
-  $(".container-2").hide();
-  clearValues();
-  player1.newGame();
-  player2.newGame();
-  $("#total1").empty();
-  $("score1").empty();
-  $("#diceRoll").empty();
-  $("#total2").empty();
-  $("#score2").empty();
-  $("#diceroll2").empty();
-
-  $(".container-1").show();
-});
 
     $("#person2hold").attr("disabled",true);
     $("#person2roll").attr("disabled",true);
@@ -168,6 +137,9 @@ $(document).ready(function(){
                    alert("now is player1 turn");
                  }
                });
+             });
+             $("#restart").click(function(){
+               page();
              });
 
     });
