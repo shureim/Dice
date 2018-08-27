@@ -1,17 +1,42 @@
-// business logic//
+// // business logic//
+
 var player1 ="";
 var player2 ="";
 
 var dice ={
-  side : 6,
+  sides : 6,
   roll:function(){
-    var throwDice = Math.floor(Math.random() * this.side)+ 1;
+    var randomNumber = Math.floor(Math.random() * this.sides)+ 1;
+    return randomNumber;
+
   }
 }
+
+function Player(turn) {
+  this.diceRoll = 0;
+  this.score = 0;
+  this.total = 0;
+  this.personName;
+}
+
+Player.prototype.newGame = function () {
+
+  this.diceRoll = 0;
+  this.score = 0;
+  this.total = 0;
+  this.personName ="";
+}
+var clearValues = function(){
+  $(".person1Name").val("");
+  $(".person2Name").val("");
+}
+
+
+
 $(document).ready(function(){
-  var diceroll1 =0;
-  var score1 =0;
-  var total1 =0;
+  var diceRoll1 = 0;
+  var score1 = 0;
+  var total1 = 0;
 
   $("button#btn").click(function(){
     $(".container-1").hide();
@@ -26,13 +51,33 @@ $(document).ready(function(){
     player1.personName=person1Name;
     player2.personName=person2Name;
 
+  $("button#restart").click(function(event){
+  $(".container-2").hide();
+  clearValues();
+  player1.newGame();
+  player2.newGame();
+  $("#total1").empty();
+  $("score1").empty();
+  $("#diceRoll").empty();
+  $("#total2").empty();
+  $("#score2").empty();
+  $("#diceroll2").empty();
+
+  $(".container-1").show();
+});
+
     $("#person2hold").attr("disabled",true);
     $("#person2roll").attr("disabled",true);
     $("#person1roll").click(function(){
-      diceroll1 = dice.roll();
-      if(diceroll1===1){
-        diceroll1 = 0;
+      diceRoll1 = dice.roll();
+      if(diceRoll1===1){
+        diceRoll1 = 0;
         score1 = 0;
+        total1 = 0;
+        $(".diceRoll1").text(diceRoll1);
+        $(".score1").text(score1);
+        $(".total1").text(total1);
+
         $("#person1hold").attr("disabled",true);
         $("#person1roll").attr("disabled",true);
 
@@ -41,12 +86,13 @@ $(document).ready(function(){
         alert("Sorry you rolled 1! your turn is over")
         }
 
-        $("#diceroll1").text(diceroll1);
+        $("#diceRoll1").text(diceRoll1);
 
-             score1 += diceroll1;
+             score1 += diceRoll1;
              $("#score1").text(score1);
 
        });
+
        $("#person1hold").click(function(){
              total1 += score1;
 
@@ -54,9 +100,9 @@ $(document).ready(function(){
              if(total1>=100){
                alert("The winner is player1")
              }else{
-               diceroll1 = 0;
+               diceRoll1 = 0;
                score1 = 0;
-               $("#diceroll1").text(diceroll1);
+               $("#diceRoll1").text(diceRoll1);
                $("#score1").text(score1);
 
                $("#person1roll").attr("disabled",true);
@@ -70,17 +116,23 @@ $(document).ready(function(){
 
 
       });
-      var diceroll2 =0;
+
+
+      var diceRoll2 =0;
       var score2 =0;
       var total2 =0;
 
-        $("#person1hold").attr("disabled",true);
-        $("#person1roll").attr("disabled",true);
+
         $("#person2roll").click(function(){
-          diceroll2 = dice.roll();
-          if(diceroll2===1){
-            diceroll2 = 0;
+          diceRoll2 = dice.roll();
+          if(diceRoll2===1){
+            diceRoll2 = 0;
             score2 = 0;
+            total2 = 0;
+            $(".diceRoll2").text(diceRoll2);
+            $(".score2").text(score2);
+            $(".total2").text(total2);
+
             $("#person2hold").attr("disabled",true);
             $("#person2roll").attr("disabled",true);
 
@@ -89,9 +141,9 @@ $(document).ready(function(){
             alert("Sorry you rolled 1! your turn is over")
             }
 
-            $("#diceroll2").text(diceroll2);
+            $("#diceRoll2").text(diceRoll2);
 
-                 score2 += diceroll2;
+                 score2 += diceRoll2;
                  $("#score2").text(score2);
 
            });
@@ -102,9 +154,9 @@ $(document).ready(function(){
                  if(total2>=100){
                    alert("The winner is player2")
                  }else{
-                   diceroll1 = 0;
+                   diceRoll2 = 0;
                    score2 = 0;
-                   $("#diceroll2").text(diceroll2);
+                   $("#diceRoll2").text(diceRoll2);
                    $("#score2").text(score2);
 
                    $("#person2roll").attr("disabled",true);
